@@ -1,0 +1,6 @@
+{
+  "selectMinWorkingTime" : "SELECT project.name, test.name, (test.end_time) - (test.start_time) FROM test JOIN project ON test.project_id = project.id ORDER BY project.name ASC, test.name ASC;",
+  "selectUniqueTests" : "SELECT project.name, count(distinct(test.name)) FROM test JOIN project ON test.project_id = project.id ORDER BY project.name , test.name ASC;",
+  "selectTestsNumber" : "SELECT project.name, test.name, test.start_time FROM test INNER JOIN project ON test.project_id = project.id WHERE start_time >= \"{0}\" ORDER BY project.name , test.name ASC;",
+  "selectBrowsers" : "SELECT COUNT(browser) FROM test where browser = \"{0}\" UNION SELECT COUNT(browser) FROM test where browser = \"{1}\""
+}
